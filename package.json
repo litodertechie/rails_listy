@@ -1,0 +1,12 @@
+{
+  "name": "CHANGE_THIS_TO_YOUR_RAILS_APP_NAMErails",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "3",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
