@@ -1,0 +1,26 @@
+<%= simple_form_for (@list) do |f|  %>
+  <%= f.error_notification  %>
+  <div class= 'form-inputs'> 
+    <%= f.input :name %>
+  </div>
+  <h3>Items</h3>
+  <table class= 'table'> 
+    <thead> 
+      <tr> 
+        <th></th>
+        <th>Item Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody class='items'> 
+      <%= f.simple_fields_for :items do |builder| %>
+      <%= render 'item_fields', f: builder %>
+      <%end %>
+    </tbody>
+  </table>
+
+  <div class= 'form-actions'> 
+    <%= f.button :submit %>
+    <%= link_to_add_association 'Add Item', f, :items, class: 'btn btn-primary', data: {association_insertion_node: '.items', association_insertion_method: :append } %>
+  </div>
+<% end %>
