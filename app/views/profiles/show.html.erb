@@ -1,7 +1,38 @@
-<h1>There gonna be crazy user lists here soon</h1>
-<% @user.lists.each do |list| %>
-<h1><%= list.name %></h1>
-<% end %>
+<div class="profile-header-wrapper">
+      <div class="container profile-header-container text-center">
+        <div class="profile-header-infos">
+          <%= image_tag("lito.jpeg", :class => "avatar")%>
+          <h1>ecoen</h1>
+          <h2>Founder @Listy</h2>
+        </div>
+        <div class="tabs">
+          <a class="tab active" href="#">
+            <h3>350</h3>
+            <p>Upvoted</p>
+          </a>
+          <a class="tab" href="#">
+            <h3>456</h3>
+            <p>Submitted</p>
+          </a>
+          <a class="tab" href="#">
+            <h3>189</h3>
+            <p>Followers</p>
+          </a>
+          <a class="tab" href="#">
+            <h3>13</h3>
+            <p>Following</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% @user.lists.each do |list| %>
+  <%= render 'list_card', list: list %>
+  <%end %>
+</div>
+
 
 
 

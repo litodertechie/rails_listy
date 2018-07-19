@@ -5,8 +5,9 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new
+    @list = List.new items: [Item.new]
   end
+
 
   def edit
   end
