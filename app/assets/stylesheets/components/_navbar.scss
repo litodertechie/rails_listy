@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .vl{
   border-left: 1px solid black;
   margin-top: 15px;
@@ -95,4 +96,9 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.btn-info{
+  margin: 5px;
+
 }
