@@ -27,9 +27,9 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row justify-content-center">
   <% @user.lists.each do |list| %>
-  <%= render 'list_card', list: list %>
+  <%= render 'glimpse_list_card', list: list %>
   <%end %>
 </div>
 

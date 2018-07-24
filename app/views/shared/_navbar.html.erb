@@ -12,9 +12,6 @@
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <%= link_to "Create a List", new_list_path, class: "navbar-listy-item navbar-listy-link" %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-      <% end %>
       <div class="navbar-listy-item">
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-listy-menu", "data-toggle" => "dropdown" %>
