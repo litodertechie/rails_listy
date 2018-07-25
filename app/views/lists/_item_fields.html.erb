@@ -1,7 +1,7 @@
-<tr class= "nested-fields"> 
-  <td> 
-    <%= link_to_remove_association "remove item", f, class: 'btn btn-primary btn-xs' %>
+<tr class= "nested-fields">
+  <td>
+    <%= link_to_remove_association "", f, class: "fas fa-trash-alt" %>
   </td>
-  <td> <%= f.input :name, label: false %></td>
-  <td> <%= f.input :description, label: false %></td>
+  <td class="input-fields"> <%= f.input :name, label: false, :placeholder => 'Name' %></td>
+  <td class="input-fields"> <%= f.input :description, label: false, :placeholder => 'Description...' %></td>
 </tr>

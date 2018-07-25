@@ -7,14 +7,24 @@
     <div class="vl"></div>
     <h1 class= "logo-listy">Listy</h1>
   </div>
+
+  <div class="navbar-search">
+    <%= form_tag(profiles_path, method: :get, class: "form-inline", role: 'search') do %>
+    <div class="input-group">
+      <%= text_field_tag :term,
+        params[:term],
+        id: 'users_search',
+        autocomplete: :off,
+        placeholder: 'Search',
+        class: 'form-control' %>
+    </div>
+    <% end %>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-listy-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <%= link_to "Create a List", new_list_path, class: "navbar-listy-item navbar-listy-link" %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-      <% end %>
       <div class="navbar-listy-item">
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-listy-menu", "data-toggle" => "dropdown" %>

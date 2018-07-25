@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
+  def show
+  end
+
   def index
   end
 
@@ -16,7 +19,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
-      redirect_to edit_list_path(@list), notice: 'List was successfully created'
+      redirect_to profile_path(current_user), notice: 'List was successfully created'
     else
       render :new
     end
@@ -24,7 +27,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to edit_list_path(@list), notice: 'List was successfully updated.'
+      redirect_to profile_path(current_user), notice: 'List was successfully updated.'
     else
       render :edit
     end
@@ -44,5 +47,5 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name, items_attributes: Item.attribute_names.map(&:to_sym).push(:_destroy))
-  end  
+  end
 end
