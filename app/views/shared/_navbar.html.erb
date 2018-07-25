@@ -7,6 +7,19 @@
     <div class="vl"></div>
     <h1 class= "logo-listy">Listy</h1>
   </div>
+
+  <div class="navbar-search">
+    <%= form_tag(profiles_path, method: :get, class: "form-inline", role: 'search') do %>
+    <div class="input-group">
+      <%= text_field_tag :term,
+        params[:term],
+        id: 'users_search',
+        autocomplete: :off,
+        placeholder: 'Search',
+        class: 'form-control' %>
+    </div>
+    <% end %>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-listy-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
