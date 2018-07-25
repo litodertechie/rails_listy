@@ -2,17 +2,19 @@
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-6">
       <ul class="user-lists">
-        <li class="user">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large"%>
-          <div class="user-name">
-            <h3>Lito Coen</h3>
-          </div>
-        </li>
+        <% @users.each do |user| %>
+          <%= link_to profile_path(user) do %>
+            <li class="user">
+              <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large"%>
+              <div class="user-name">
+                <h3><%= user.username %><h3>
+                <p><%= [user.first_name, user.last_name].join(" ")%></p>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
 </div>
-<h1>see if it works</h1>
-<% @users.each do |user| %>
-<%= user.first_name %>
-<% end %>
+

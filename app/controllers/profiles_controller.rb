@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     search = params[:term].present? ? params[:term] : nil
@@ -29,6 +30,7 @@ class ProfilesController < ApplicationController
 
   private
   def set_user
+    @user = User.find(params[:id])
   end
 
   def user_params
