@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-login">
+        <h1><%= @list.name %></h1>
+        <div class="item-elements">
+          <% @list.items.each do |item| %>
+          <div class="element">
+            <h3><%= item.name %></h3>
+            <p><%= item.description %></p>
+          </div>
+          <% end %>
+        </div>
+        <% if @list.user == current_user %>
+          <div class="item-footer">
+            <%= link_to list_path(@list), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <%= link_to edit_list_path(@list) do %>
+              <i class="fas fa-pencil-alt"></i>
+              <% end %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
