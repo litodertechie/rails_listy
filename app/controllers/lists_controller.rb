@@ -35,6 +35,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
+    redirect_to profile_path(current_user), notice: 'List was successfully deleted.'
   end
 
 
