@@ -1,9 +1,10 @@
 <div class="profile-header-wrapper">
       <div class="container profile-header-container text-center">
         <div class="profile-header-infos">
-          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar"%>
-          <h1>ecoen</h1>
-          <h2>Founder @Listy</h2>
+          <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar"%>
+          <h1><%= @user.username %></h1>
+          <h2><%= @user.description%></h2>
+          <%= render 'follow_form' %>
         </div>
         <div class="tabs">
           <a class="tab active" href="#">
@@ -11,15 +12,15 @@
             <p>Likes</p>
           </a>
           <a class="tab" href="#">
-            <h3>6</h3>
+            <h3><%= @user.lists.count %></h3>
             <p>Lists</p>
           </a>
           <a class="tab" href="#">
-            <h3>189</h3>
+            <h3><%= @user.followers_count %></h3>
             <p>Followers</p>
           </a>
           <a class="tab" href="#">
-            <h3>13</h3>
+            <h3><%= @user.follow_count %></h3>
             <p>Following</p>
           </a>
         </div>

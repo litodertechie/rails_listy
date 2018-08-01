@@ -3,6 +3,20 @@
     <div class="card-body">
       <h5 class="card-title"><%= list.name %></h5>
         <%=link_to "Explore", list_path(list),  class: 'btn btn-primary' %>
+        <div class="controls">
+          <ul class="list-inline list-controls">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-heart"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-share"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
     </div>
   </div>
 </div>
