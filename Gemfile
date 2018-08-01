@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'jquery-rails'
 gem 'searchkick'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   searchkick
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
