@@ -1,7 +1,7 @@
 <div class="profile-header-wrapper">
       <div class="container profile-header-container text-center">
         <div class="profile-header-infos">
-          <%= image_tag("lito.jpeg", :class => "avatar")%>
+          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar"%>
           <h1>ecoen</h1>
           <h2>Founder @Listy</h2>
         </div>
