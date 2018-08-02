@@ -5,7 +5,8 @@
 .tabs {
   background: #53443F;
   display: flex;
-  padding: 10px 10px 0 10px
+  padding: 10px 10px 0 10px;
+  align-items: center;
 }
 .tabs a {
   color: white;

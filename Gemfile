@@ -21,6 +21,7 @@ gem 'searchkick'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'public_activity'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

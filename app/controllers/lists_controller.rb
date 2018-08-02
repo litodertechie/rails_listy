@@ -19,6 +19,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
+      @list.create_activity :create, owner: current_user
       redirect_to profile_path(current_user), notice: 'List was successfully created'
     else
       render :new
@@ -27,6 +28,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
+      @list.create_activity :update, owner: current_user
       redirect_to profile_path(current_user), notice: 'List was successfully updated.'
     else
       render :edit

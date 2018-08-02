@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'activities/index'
   get 'users/follow'
   get 'users/unfollow'
   get 'users_controller/follow'
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
       get :unfollow
     end
   end
+  resources :activities
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

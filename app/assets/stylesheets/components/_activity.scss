@@ -1,0 +1,26 @@
+.activity {
+  border-bottom: solid 1px #CCC;
+  padding: 16px 0;
+  em {
+    color: #777;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+}
+
+.timestamp {
+    color: $gray;
+    font-size: 8px;
+    display: block;
+}
+
+.small-profile-header-wrapper{
+  margin-left: 70px;
+  margin-right: 70px;
+  background: #53443F;
+}
+
+.small-profile-header-infos {
+  padding: 50px 0;
+}
+
