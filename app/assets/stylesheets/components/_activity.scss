@@ -1,6 +1,12 @@
+.row {
+  margin-top: 20px;
+}
+
 .activity {
+  margin-top: 10px;
   border-bottom: solid 1px #CCC;
   padding: 16px 0;
+  margin-top: 20px;
   em {
     color: #777;
     font-size: 12px;
@@ -9,18 +15,138 @@
 }
 
 .timestamp {
-    color: $gray;
-    font-size: 8px;
-    display: block;
+  color: $gray;
+  font-size: 8px;
+  display: block;
+}
+
+.small-profile-header-container img {
+  width: 75px;
+  border-radius: 50%;
+  height: 75px;
+}
+
+.small-profile-header-container h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.small-profile-header-container h2 {
+  color: white;
+  opacity: 0.4;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  letter-spacing: -1px;
 }
 
 .small-profile-header-wrapper{
   margin-left: 70px;
   margin-right: 70px;
-  background: #53443F;
+  background: #3894BA;
+  border-style:solid;
+  border-color:#3894BA;
+  border-width: 1px;
 }
 
 .small-profile-header-infos {
-  padding: 50px 0;
+  padding: 100px 0;
 }
+
+.small-tabs {
+  background: #3894BA;
+  display: flex;
+  padding: 10px 10px 0 10px;
+  align-items: center;
+}
+.small-tabs a {
+  color: white;
+}
+.small-tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.small-tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+  font-size: 12px;
+}
+.small-tabs p {
+  opacity: 0.5;
+  margin-bottom: 0;
+  font-size: 10px;
+}
+.small-tab {
+  background: #5F5F5F;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 15px 0;
+}
+.small-tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.small-tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.small-tab.active {
+  background: white;
+  color: black;
+}
+
+.profile-views {
+  height: 230px;
+  background: white;
+  text-align: center;
+}
+
+.profile-views h2 {
+  color: #3894BA ;
+  opacity: 0.4;
+  font-size: 50px;
+  font-weight: lighter;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  padding-top: 70px;
+}
+
+.profile-views h3 {
+  opacity: 0.4;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.feed {
+  background: white;
+}
+
+.call-to-action {
+  height: 40px;
+}
+.call-to-action h3 {
+  opacity: 0.4;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-call-to-action {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-right: 10px;
+}
+.btn-call-to-action:hover {
+  opacity: 1;
+  text-decoration: none;
+  color:  #999999;
+}
+
 

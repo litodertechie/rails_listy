@@ -24,7 +24,8 @@
   <div class="navbar-listy-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
-      <%= link_to "Create a List", new_list_path, class: "navbar-listy-item navbar-listy-link" %>
+      <%= link_to "Home", activities_path, class: "btn-call-to-action" %>
+      <%= link_to "Create a List", new_list_path, class: "btn-call-to-action" %>
       <div class="navbar-listy-item">
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>

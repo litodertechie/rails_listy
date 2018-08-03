@@ -1,39 +1,49 @@
-<h1>Friend's Activities</h1>
 <div class="row">
   <aside class="col-md-4">
     <section>
     <div class="small-profile-header-wrapper">
-      <div class="container profile-header-container text-center">
+      <div class="container small-profile-header-container text-center">
         <div class="small-profile-header-infos">
           <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-bordered"%>
           <h1><%= current_user.username %></h1>
           <h2><%= current_user.description%></h2>
         </div>
-        <div class="tabs">
-          <a class="tab active" href="#">
+        <div class="small-tabs">
+          <a class="small-tab active" href="#">
             <h3>350</h3>
             <p>Likes</p>
           </a>
-          <a class="tab" href="#">
+          <a class="small-tab" href="#">
             <h3><%= current_user.lists.count %></h3>
             <p>Lists</p>
           </a>
-          <a class="tab" href="#">
+          <a class="small-tab" href="#">
             <h3><%= current_user.followers_count %></h3>
             <p>Followers</p>
           </a>
-          <a class="tab" href="#">
+          <a class="small-tab" href="#">
             <h3><%= current_user.follow_count %></h3>
             <p>Following</p>
           </a>
         </div>
       </div>
+      <div class="profile-views">
+        <h2>150</h2>
+        <h3>Profile Views</h3>
+      </div>
     </div>
     </section>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-6 feed">
+    <div class="call-to-action">
+      <h3>What are you waiting for? Create a list and inspire other's</h3>
+      <%= link_to "Create a List", new_list_path, class: "btn-call-to-action" %>
+    </div>
     <% @activities.each do |activity| %>
     <div class="activity">
+      <div class="activity-avatar">
+        <%= cl_image_tag activity.owner.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar"%>
+      </div>
       <%= link_to activity.owner.username, activity.owner if activity.owner %>
       <%= render_activity activity %>
       <span class="timestamp">
