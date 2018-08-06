@@ -1,12 +1,63 @@
 // in here is the CSS for the show.html.erb of each list. This is how a user views the list of another user
-    .element{
-    background: #F4F4F4;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #dee2e6;
-    margin-top: 25px;
+    .url-card-body{
+      border: 1px solid #dce0e0;
+    }
+
+    .url-card-body p {
+      font-size: 12px;
     }
 
     .item-footer{
       margin: 5px;
+    }
+
+    .card-header{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .url-image {
+      float: left;
+      width : 30%;
+      margin: 5px;
+    }
+
+    .url-link {
+      color: #616668;
+      border-bottom: solid 1px;
+      margin-bottom: 20px;
+    }
+
+    .url-link:hover {
+      color: #616668;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    .item-description {
+      color: black;
+      font-size: 16px;
+      margin-top: 5px;
+      position: relative;
+      background: #F5F8FA;
+      border-radius: .4em;
+    }
+
+    .item-description p {
+      padding: 5px !important;
+    }
+
+    .item-description:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 1.656em solid transparent;
+      border-bottom-color: #F5F8FA;
+      border-top: 0;
+      border-left: 0;
+      margin-left: -0.828em;
+      margin-top: -1.1em;
     }
