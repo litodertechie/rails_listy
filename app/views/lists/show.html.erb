@@ -1,27 +1,40 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-6">
-      <div class="form-login">
-        <h1><%= @list.name %></h1>
-        <div class="item-elements">
-          <% @list.items.each do |item| %>
-          <div class="element">
-            <h3><%= item.name %></h3>
-            <p><%= item.description %></p>
-          </div>
-          <% end %>
+      <div class="card">
+        <div class="card-header">
+          <h2><%= @list.name %><h2>
         </div>
-        <% if @list.user == current_user %>
-          <div class="item-footer">
-            <%= link_to list_path(@list), method: :delete do %>
+        <% @list.items.each do |item| %>
+          <% if item.url != nil %>
+            <% output = item.preview %>
+            <%= link_to output[3], class: "url-link", target: :_blank do   %>
+              <div class="url-card-body">
+                <%= image_tag((output[0]), class: "url-image") %>
+                <h5 class="url-card-title"><%= output[2] %></h5>
+                <p class="url-card-description"> <%= output[1] %></p>
+              </div>
+                <p class= "item-description"><%= item.description %></p>
+              <% end %>
+            <%else%>
+            <div class="normal-card-body">
+              <h5 class="normal-card-title"><%= item.name %></h5>
+              <p class="item-description"><%= item.description %></p>
+            </div>
+            <% end %>
+          <% end %>
+          <% if @list.user == current_user %>
+            <div class="item-footer">
+              <%= link_to list_path(@list), method: :delete do %>
               <i class="fas fa-trash-alt"></i>
               <% end %>
-            <%= link_to edit_list_path(@list) do %>
+              <%= link_to edit_list_path(@list) do %>
               <i class="fas fa-pencil-alt"></i>
               <% end %>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
 </div>
+
