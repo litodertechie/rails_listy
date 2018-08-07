@@ -5,10 +5,13 @@
         <div class="card-header">
           <h2><%= @list.name %><h2>
         </div>
+        <% counter = 0 %>
         <% @list.items.each do |item| %>
+          <% counter = counter + 1 %>
           <% if item.url != nil %>
             <% output = item.preview %>
             <%= link_to output[3], class: "url-link", target: :_blank do   %>
+              <div class="counter"> <%= counter %> </div>
               <div class="url-card-body">
                 <%= image_tag((output[0]), class: "url-image") %>
                 <h5 class="url-card-title"><%= output[2] %></h5>
@@ -17,14 +20,17 @@
                 <p class= "item-description"><%= item.description %></p>
               <% end %>
             <%else%>
-            <div class="normal-card-body">
-              <h5 class="normal-card-title"><%= item.name %></h5>
-              <p class="item-description"><%= item.description %></p>
-            </div>
-            <% end %>
+              <div class="counter"> <%= counter %> </div>
+              <div class="normal-card-body">
+                <h5 class="normal-card-title"><%= item.name %></h5>
+                <p class="item-description"><%= item.description %></p>
+              </div>
+              <div class="normal-card-bottom-border"></div>
           <% end %>
+        <% end %>
+        <div class="item-footer">
           <% if @list.user == current_user %>
-            <div class="item-footer">
+            <div class="item-footer-left">
               <%= link_to list_path(@list), method: :delete do %>
               <i class="fas fa-trash-alt"></i>
               <% end %>
@@ -33,6 +39,13 @@
               <% end %>
             </div>
           <% end %>
+          <div class="item-footer-right">
+            <%= link_to like_list_path(@list), method: :put, remote: :true do %>
+            <i class="fa fa-heart"></i>
+            <% end %>
+            <span class="likes-count"><%= @list.get_upvotes.size %></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

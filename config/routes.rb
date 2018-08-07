@@ -11,11 +11,16 @@ Rails.application.routes.draw do
       get :autocomplete
     end
   end
-  resources :lists
+  resources :lists do
+    member do
+      put "like" => "lists#vote"
+    end
+  end
   resources :users do
     member do
       get :follow
       get :unfollow
+      get :follow_suggestions
     end
   end
   resources :activities

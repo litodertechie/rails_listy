@@ -1,4 +1,5 @@
 class List < ApplicationRecord
+  acts_as_votable
   include ::PublicActivity::Common
   belongs_to :user
   has_many :items, dependent: :destroy

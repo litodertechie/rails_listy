@@ -23,6 +23,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'public_activity'
 gem 'link_thumbnailer'
+gem 'acts_as_votable', '~> 0.11.1'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

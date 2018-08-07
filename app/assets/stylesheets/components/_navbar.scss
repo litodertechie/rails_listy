@@ -1,9 +1,13 @@
 /* Main navbar */
+.logo {
+  color: #3894BA;
+}
 .logo-listy{
   font-size: 50px;
   margin-bottom: 15px;
   margin-left: 15px;
   margin-top: 15px;
+  color: #3894BA;
 
 }
 .navbar-left{
@@ -30,6 +34,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-search {
+  margin-left: 60px;
 }
 
 /* Logo */
@@ -102,3 +110,8 @@
   margin: 5px;
 
 }
+
+
+
+
+

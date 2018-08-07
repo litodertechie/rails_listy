@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_todo_list, only: [:show, :edit, :update, :destroy, :vote]
+  respond_to :js, :json, :html
   def show
   end
 
@@ -38,6 +38,14 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     redirect_to profile_path(current_user), notice: 'List was successfully deleted.'
+  end
+
+  def vote
+    if !current_user.liked? @list
+      @list.liked_by current_user
+    elsif current_user.liked? @list
+      @list.unliked_by current_user
+    end
   end
 
 

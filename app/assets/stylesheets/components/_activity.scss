@@ -43,8 +43,8 @@
 }
 
 .small-profile-header-wrapper{
-  margin-left: 70px;
-  margin-right: 70px;
+  // margin-left: 70px;
+  // margin-right: 70px;
   background: #3894BA;
   border-style:solid;
   border-color:#3894BA;
@@ -135,8 +135,8 @@
 }
 
 .btn-call-to-action {
-  color: #999999;
-  border: 1px solid #999999;
+  color: #3894BA;
+  border: 1px solid #3894BA;
   padding: 5px 10px;
   border-radius: 50px;
   font-weight: lighter;
@@ -146,7 +146,26 @@
 .btn-call-to-action:hover {
   opacity: 1;
   text-decoration: none;
-  color:  #999999;
+  color:  #3894BA;
+}
+
+.who-to-follow h1 {
+  background: white;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.who-to-follow {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.who-to-follow-box {
+  border-style:solid;
+  border-color:#3894BA;
+  background: white;
+  border-width: 1px;
 }
 
 
