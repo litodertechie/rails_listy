@@ -10,6 +10,39 @@
   color: #3894BA;
 
 }
+
+
+// hide sign up button and h1 listy tag on mobile
+@media screen and (max-width: 600px) {
+  h1.logo-listy {
+    display: none;
+  }
+  .btn-info {
+    display: none;
+  }
+
+  .btn-primary {
+    margin-left: 5px;
+    margin-right:-15px;
+  }
+
+  .logo {
+    margin-right: 5px;
+    margin-left: -15px;
+  }
+
+  .vl {
+    display: none;
+  }
+
+  .btn-right {
+    display: none;
+  }
+
+  .btn-navigation {
+    display: none;
+  }
+}
 .navbar-left{
   font-size: 50px;
   display: flex;
@@ -38,6 +71,11 @@
 
 .navbar-search {
   // margin-left: 60px;
+
+}
+
+.input-group-search {
+
 }
 
 /* Logo */

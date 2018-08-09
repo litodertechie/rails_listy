@@ -1,15 +1,15 @@
 <div class="navbar-listy">
   <div class="navbar-left">
-    <%= link_to root_path, class: "navbar-listy-brand" do %>
+    <%= link_to activities_path, class: "navbar-listy-brand" do %>
     <i class="fas fa-th-list logo"></i>
     <% end %>
     <div class="vl"></div>
-    <h1 class= "logo-listy">Listy</h1>
+    <h1 class="logo-listy">Listy</h1>
   </div>
 
   <div class="navbar-search">
     <%= form_tag(profiles_path, method: :get, class: "form-inline", role: 'search') do %>
-    <div class="input-group">
+    <div class="input-group-search">
       <%= text_field_tag :term,
         params[:term],
         id: 'users_search',

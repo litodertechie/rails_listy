@@ -6,7 +6,6 @@
   color: white;
   text-align: center;
   height: 100%;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -29,6 +28,45 @@
   margin: 0px;
 }
 
+
+
+// mobile : remove margin from boxes when on mobile so that they stack
+@media screen and (max-width: 570px) {
+    .info-box {
+        margin: 10px !important;
+        margin-bottom: 3px !important;
+    }
+
+    .info-box h1 {
+      margin-left: 3px !important;
+      text-align: left !important;
+    }
+
+    .info-box h3 {
+      margin-bottom: 0px !important;
+      margin-left: 0px !important;
+
+    }
+    .fa-share {
+      margin-left: 0px !important;
+    }
+    .fa-bell {
+      margin-left: 0px !important;
+    }
+}
+
+.fa-bell {
+  color: #E6E6E6;
+  opacity: 0.5;
+  margin-left: 50px;
+}
+
+@media screen and (min-width: 1400px) {
+    .info-box {
+      margin: 50px !important;
+    }
+}
+
 .border-right {
   border-left: solid 3px #dee2e6;
 }
@@ -39,7 +77,6 @@
   margin: 100px;
   padding: 30px;
   box-shadow: 5px 10px #616668;
-
 }
 
 
@@ -58,7 +95,7 @@
   color: #848484;
   opacity: 0.8;
   margin-left: 50px;
-  margin-bottom: 85px;
+  margin-bottom: 50px;
 }
 
 .info-box-left h3 {
