@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy, :vote]
   respond_to :js, :json, :html
   def show

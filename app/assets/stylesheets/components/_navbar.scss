@@ -37,7 +37,7 @@
 }
 
 .navbar-search {
-  margin-left: 60px;
+  // margin-left: 60px;
 }
 
 /* Logo */
@@ -62,7 +62,7 @@
 /* Basic navbar item */
 .navbar-listy-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* Navbar link */
@@ -109,6 +109,25 @@
 .btn-info{
   margin: 5px;
 
+}
+
+.btn-navigation {
+  color: #3894BA;
+  border: 1px solid #3894BA;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.btn-right {
+  margin-left: 5px !important;
+}
+
+.btn-navigation:hover {
+  opacity: 1;
+  text-decoration: none;
+  color:  #3894BA;
 }
 
 
