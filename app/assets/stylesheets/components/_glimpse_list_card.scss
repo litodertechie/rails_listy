@@ -4,12 +4,26 @@
   position: relative;
 }
 
-.list-controls {
-  display: flex;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+.card-body {
+  padding: 0.5rem;
 }
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.controls-right {
+  margin-top: 15px;
+}
+
+// .list-controls {
+//   display: flex;
+//   position: absolute;
+//   bottom: 0px;
+//   right: 0px;
+// }
 
 .list-controls a {
   padding: 0 20px;
