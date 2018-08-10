@@ -72,12 +72,16 @@
       justify-content: space-between;
     }
 
-    .fa-heart a {
-      color: #E6E6E6 !important;
+
+    a:hover .fa-heart {
+      color: #D3473C !important;
+      font-size: 17px;
+      transition: all 0.15s ease;
+      border-color: transparent;
     }
 
-    .fa-heart a:hover {
-      color: #D3473C !important;
+    a .fa-heart {
+      color: #E6E6E6 !important;
     }
 
     .likes-count {

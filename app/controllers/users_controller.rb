@@ -10,6 +10,11 @@ class UsersController < ApplicationController
     redirect_to profile_path(@user)
   end
 
+  def follow_suggestions
+    following_ids = current_user.all_following.pluck(:id)
+    @users = User.where.not(id: following_ids).joins(:lists).group('users.id').having('count(user_id) > 1')
+  end
+
   private
   def set_user
     @user = User.find(params[:id])

@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-md-3">
+  <aside class="col-md-3 col-4 left-column">
     <section>
     <div class="small-profile-header-wrapper">
       <div class="container small-profile-header-container text-center">
@@ -34,7 +34,7 @@
     </div>
     </section>
   </aside>
-  <div class="col-md-6 feed">
+  <div class="col-md-6 col-12 feed">
     <div class="call-to-action">
       <h3>What are you waiting for? Create a list and inspire other's</h3>
       <%= link_to "Create a List", new_list_path, class: "btn-call-to-action" %>
@@ -55,8 +55,52 @@
   <aside class="col-md-3 who-to-follow">
     <section>
       <div class="who-to-follow-box">
-          <h1> Who to Follow</h1>
-      </div>
+        <div class="header">
+          <div class="header-left">
+            <h1> Who to Follow</h1>
+          </div>
+          <div class="header-right">
+          <%= link_to follow_suggestions_user_path(current_user) do %>
+            <p>View All</p>
+          <% end %>
+          </div>
+        </div>
+          <ul class="user-lists">
+            <% user_counter = 0  %>
+            <% unless user_counter==1 %>
+              <% @users.each do |user| %>
+                  <% user_counter += 1   %>
+                  <%= link_to profile_path(user) do %>
+                    <li class="user">
+                      <div class="user-upper-part">
+                        <%= cl_image_tag user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-large"%>
+                        <div class="user-name">
+                          <h3><%= "@" + user.username %><h3>
+                          <p><%= [user.first_name, user.last_name].join(" ")%></p>
+                          <% @user = user  %>
+                        </div>
+                      </div>
+                        <%= render '/profiles/follow_form' %>
+                      <div class="user-footer">
+                        <div class="user-stat">
+                          <p><%= user.lists.count %></p>
+                          <p class="text">Lists</p>
+                        </div>
+                        <div class="user-stat">
+                          <p><%= user.followers_count %></p>
+                          <p class="text">Followers</p>
+                        </div>
+                        <div class="user-stat">
+                          <p><%= user.follow_count %></p>
+                          <p class="text">Following</p>
+                        </div>
+                      </div>
+                    </li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
     </section>
   </aside>
 </div>

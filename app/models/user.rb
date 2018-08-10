@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
-  searchkick
+  searchkick word_start: [:first_name, :last_name, :username]
   acts_as_follower
   acts_as_followable
   acts_as_voter
