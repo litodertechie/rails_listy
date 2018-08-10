@@ -8,7 +8,11 @@
         </div>
         <div class="tabs">
           <a class="tab active" href="#">
-            <h3>350</h3>
+            <% total = 0 %>
+            <% @user.lists.each do |list| %>
+              <% total += list.get_upvotes.size %>
+            <%end %>
+            <h3><%=total%></h3>
             <p>Likes</p>
           </a>
           <a class="tab" href="#">

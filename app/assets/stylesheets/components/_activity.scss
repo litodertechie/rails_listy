@@ -49,6 +49,7 @@
   border-style:solid;
   border-color:#3894BA;
   border-width: 1px;
+  margin-left: 10px;
 }
 
 .small-profile-header-infos {
@@ -123,9 +124,9 @@
   background: white;
 }
 
-.call-to-action {
-  height: 40px;
-}
+// .call-to-action {
+//   height: 40px;
+// }
 .call-to-action h3 {
   opacity: 0.4;
   font-size: 20px;
@@ -166,6 +167,42 @@
   border-color:#3894BA;
   background: white;
   border-width: 1px;
+  margin-right: 10px;
 }
+
+.who-to-follow-box h1 {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .who-to-follow{
+    display:none;
+  }
+
+  .small-profile-header-wrapper {
+    display: none;
+  }
+
+  .activity {
+    margin: 10px;
+  }
+
+}
+
+.header {
+    display:flex !important;
+    justify-content: space-around !important;
+  }
+
+.header-right p {
+  margin-top: 23px;
+  font-size: 15px;
+
+}
+
+
+
+
+
 
 

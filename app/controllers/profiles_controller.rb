@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json, :js
 
   def index
     search = params[:term].present? ? params[:term] : nil
@@ -17,9 +18,10 @@ class ProfilesController < ApplicationController
       match: :word_start,
       limit: 10,
       load: false,
-      misspellings: {below: 5}
+      misspellings: false
     }).map(&:username)
   end
+
 
   def show
     @user = User.find(params[:id])

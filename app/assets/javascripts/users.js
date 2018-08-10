@@ -11,3 +11,4 @@ $(document).on('turbolinks:load', function(){
     source: users
   });
 })
+

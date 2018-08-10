@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6">
+      <ul class="user-lists">
+        <% @users.each do |user| %>
+          <%= link_to profile_path(user) do %>
+            <li class="user">
+              <%= cl_image_tag user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-large"%>
+              <div class="user-name">
+                <h3><%= user.username %><h3>
+                <p><%= [user.first_name, user.last_name].join(" ")%></p>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
