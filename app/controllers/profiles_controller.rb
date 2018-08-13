@@ -24,7 +24,6 @@ class ProfilesController < ApplicationController
 
 
   def show
-    @user = User.find(params[:id])
   end
 
   def profile
@@ -33,7 +32,7 @@ class ProfilesController < ApplicationController
 
   private
   def set_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def user_params
