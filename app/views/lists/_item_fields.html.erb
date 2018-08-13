@@ -2,6 +2,8 @@
   <td>
     <%= link_to_remove_association "", f, class: "fas fa-trash-alt" %>
   </td>
-  <td class="input-fields"> <%= f.input :name, label: false, :placeholder => 'Name' %></td>
-  <td class="input-fields"> <%= f.input :description, label: false, :placeholder => 'Description...' %></td>
+  <td class="input-fields"> <%= f.input :name, label: false, :placeholder => 'Name or URL' %></td>
+  <td class="input-fields"> <%= f.input :description, label: false, :input_html => {:rows => 5}, :placeholder => 'Description...' %></td>
 </tr>
+
+

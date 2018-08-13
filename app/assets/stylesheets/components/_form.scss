@@ -1,21 +1,24 @@
-.form-login {
+.form-list {
   background: white;
   padding: 10px 20px;
-  margin-top: 50px;
+  margin-top: 20px;
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   h2 {
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-align: center;
+    font-weight: bold;
   }
-  .btn {
-    width: 100%;
+  .btn-list {
+    width: 90%;
     margin-bottom: 20px;
+    justify-content: center;
   }
   .input-fields {
     display: block;
+    width: 90%
   }
   .table th, .table td {
     padding: 0.3rem;
@@ -25,4 +28,10 @@
   .table tr {
     border-top: 1px solid #dee2e6;
   }
+
+  .form-actions {
+    margin-top: 30px;
+    margin-left: 50px;
+  }
 }
+

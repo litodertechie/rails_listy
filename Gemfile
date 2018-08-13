@@ -25,6 +25,7 @@ gem 'public_activity'
 gem 'link_thumbnailer'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'social-share-button'
+gem 'friendly_id', '~> 5.2.0'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

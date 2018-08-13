@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :username, use: :slugged
   mount_uploader :photo, PhotoUploader
   searchkick word_start: [:first_name, :last_name, :username]
   acts_as_follower

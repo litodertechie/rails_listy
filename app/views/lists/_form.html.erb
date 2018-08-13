@@ -1,8 +1,8 @@
-<div class="form-login">
+<div class="form-list">
   <%= simple_form_for (@list) do |f|  %>
     <%= f.error_notification  %>
     <div class= 'form-inputs'>
-    <h3>  <%= f.input :name %></h3>
+    <h3>  <%= f.input :name, :placeholder => 'Give your list a name'  %></h3>
     </div>
     <h3>Items</h3>
     <table class= 'table'>
@@ -13,8 +13,8 @@
       </tbody>
     </table>
     <div class= 'form-actions'>
-      <%= link_to_add_association 'Add Item', f, :items, class: 'btn btn-primary', data: {association_insertion_node: '.items', association_insertion_method: :append } %>
-    <%= f.button :submit, "Save List", class: 'btn btn-primary' %>
+      <%= link_to_add_association 'Add Item', f, :items, class: 'btn btn-primary btn-list', data: {association_insertion_node: '.items', association_insertion_method: :append } %>
+    <%= f.button :submit, "Save List", class: 'btn btn-primary btn-list' %>
     </div>
   <% end %>
 </div>
