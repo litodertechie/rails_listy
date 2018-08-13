@@ -66,10 +66,7 @@
           </div>
         </div>
           <ul class="user-lists">
-            <% user_counter = 0  %>
-            <% unless user_counter==1 %>
-              <% @users.each do |user| %>
-                  <% user_counter += 1   %>
+            <% @users.each do |user| %>
                   <%= link_to profile_path(user) do %>
                     <li class="user">
                       <div class="user-upper-part">
@@ -98,7 +95,6 @@
                     </li>
                 <% end %>
               <% end %>
-            <% end %>
           </ul>
         </div>
     </section>

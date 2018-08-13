@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def follow_suggestions
     following_ids = current_user.all_following.pluck(:id)
-    @users = User.where.not(id: following_ids).joins(:lists).group('users.id').having('count(user_id) > 1')
+    @users = User.where.not(id: following_ids).where.not(id: current_user.id).joins(:lists).group('users.id').having('count(user_id) > 1')
   end
 
   private

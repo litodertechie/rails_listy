@@ -44,6 +44,7 @@
             <i class="fa fa-heart"></i>
             <% end %>
             <span class="likes-count"><%= @list.get_upvotes.size %></span>
+            <%= social_share_button_tag(@list.name, :url => "http://www.listy.club/lists/1") %>
           </div>
         </div>
       </div>
