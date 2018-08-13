@@ -19,4 +19,8 @@ class User < ApplicationRecord
       last_name: last_name
     }
   end
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
