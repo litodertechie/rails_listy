@@ -9,10 +9,27 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <meta name="description" content="Listy is the first social network for influencers to create curated lists to share with other people">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <meta property="og:title" content="Listy - The social network to create curated lists">
+   <!--  facebook meta -->
+    <meta property="og:title" content="Listy | The social network to share your best lists">
   <meta property="og:image" content="http://res.cloudinary.com/dgccrihdr/image/upload/c_scale,w_300/v1534180679/facebook-card.jpg">
   <meta property="og:description" content="Listy is the first social network for influencers to create curated lists to share with other people. If you're looking for inspiration, Listy is the place to go.">
+  <meta property="og:url" content="http://www.listy.club" />
   <meta property="og:site_name" content="Listy"/>
+ <!--  twitter meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Lewagonparis">
+  <meta name="twitter:title" content="Listy | The social network to share your best lists">
+  <meta name="twitter:description" content="Listy is the first social network for influencers to create curated lists to share with other people. If you're looking for inspiration or want to inspire others, Listy is the place to go.">
+  <meta name="twitter:creator" content="@Listy">
+  <meta name="twitter:image:src" content="http://res.cloudinary.com/dgccrihdr/image/upload/c_scale,w_300/v1534180679/facebook-card.jpg">
+  <!-- // favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <%= render 'shared/navbar' %>

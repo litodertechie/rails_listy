@@ -2,7 +2,7 @@
   <aside class="col-md-3 col-4 left-column">
     <section>
     <div class="small-profile-header-wrapper">
-      <div class="container small-profile-header-container text-center">
+      <div class="container small-profile-header-container user-text-center">
         <div class="small-profile-header-infos">
           <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-bordered"%>
           <h1><%= current_user.username %></h1>
@@ -85,15 +85,15 @@
                       <div class="user-footer">
                         <div class="user-stat">
                           <p><%= user.lists.count %></p>
-                          <p class="text">Lists</p>
+                          <p class="user-text">Lists</p>
                         </div>
                         <div class="user-stat">
                           <p><%= user.followers_count %></p>
-                          <p class="text">Followers</p>
+                          <p class="user-text">Followers</p>
                         </div>
                         <div class="user-stat">
                           <p><%= user.follow_count %></p>
-                          <p class="text">Following</p>
+                          <p class="user-text">Following</p>
                         </div>
                       </div>
                     </li>

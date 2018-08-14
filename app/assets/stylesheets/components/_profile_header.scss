@@ -2,9 +2,9 @@
   background: #3894BA;
 }
 .profile-header-container img {
-  width: 75px;
+  width: 100px;
   border-radius: 50%;
-  height: 75px;
+  height: 100px;
 }
 .profile-header-container h1 {
   color: white;
@@ -22,4 +22,5 @@
 }
 .profile-header-infos {
   padding: 20px 0;
+  justify-content: space-around;
 }
