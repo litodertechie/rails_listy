@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   activities_path
   end
 
+  def current_user
+    super || OpenStruct.new(username: "guestuser", first_name: "guest", last_name:"user", email: "guestuser@example.com")
+  end
+
   protected
 
   def configure_permitted_parameters

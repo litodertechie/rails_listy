@@ -21,7 +21,7 @@
   </div>
   <!-- Right Navigation -->
   <div class="navbar-listy-right hidden-xs hidden-sm">
-    <% if user_signed_in? %>
+    <% if current_user.is_a?(User) %>
       <!-- Avatar with dropdown menu -->
       <%= link_to "Home", activities_path, class: "btn-navigation" %>
       <%= link_to "Create a List", new_list_path, class: "btn-navigation btn-right" %>
