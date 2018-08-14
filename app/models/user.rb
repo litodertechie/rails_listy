@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Impressionist::IsImpressionable
+  is_impressionable
   extend FriendlyId
   friendly_id :username, use: :slugged
   mount_uploader :photo, PhotoUploader

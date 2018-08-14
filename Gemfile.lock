@@ -128,6 +128,8 @@ GEM
       image_size
       typhoeus
     image_size (2.0.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     iso8601 (0.9.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -319,6 +321,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
   friendly_id (~> 5.2.0)
+  impressionist
   jbuilder (~> 2.0)
   jquery-rails
   link_thumbnailer

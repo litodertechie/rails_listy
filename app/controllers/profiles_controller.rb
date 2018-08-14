@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json, :js
+  impressionist :actions=>[:show]
 
   def index
     search = params[:term].present? ? params[:term] : nil
@@ -24,6 +25,7 @@ class ProfilesController < ApplicationController
 
 
   def show
+    impressionist(@user)
   end
 
   def profile
