@@ -6,10 +6,36 @@
 
     .url-card-body {
       border: 1px solid #dce0e0;
+      display: flex;
+    }
+
+    .url-card-image-container {
+      width: 40%;
+    }
+
+    .url-card-text {
+      width: 60%;
+      position: relative;
+    }
+
+    .url-image {
+      width: 95%;
+      height: 95%;
+      margin-top: 5px;
+      margin-left: 5px;
     }
 
     .url-card-body p {
       font-size: 12px;
+    }
+
+    .url-card-url-root {
+      bottom: 0;
+      margin-bottom: 0px;
+    }
+
+    .url-card-body h5 {
+      font-size: 16px;
     }
 
     .item-footer{
@@ -26,12 +52,6 @@
       background: #3894BA;
       opacity: 0.8;
       color: white;
-    }
-
-    .url-image {
-      float: left;
-      width : 30%;
-      margin: 5px;
     }
 
     .url-link {

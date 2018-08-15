@@ -5,11 +5,11 @@ class Item < ApplicationRecord
   def preview
     if url.present? ?
       object = LinkThumbnailer.generate(url) : ""
-      # image = object.images.first.src if object.images.first.src.is_a?(String) else
-      image = object.images.first.src.is_a?(String)? object.images.first.src : "http://res.cloudinary.com/dgccrihdr/image/upload/v1534261028/question_mark.jpg"
-      description = object.description
+      image = object.images.first.src.is_a?(String)? object.images.first.src : "http://res.cloudinary.com/dgccrihdr/image/upload/v1534330912/no-preview.png"
+      description = object.description.truncate(100, separator: /\s/) + "..."
       title = object.title
-      return image, description, title, url
+      url_root = object.url.host.upcase
+      return image, description, title, url, url_root
     end
   end
 
