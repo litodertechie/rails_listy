@@ -16,12 +16,6 @@ class UsersController < ApplicationController
     @users = User.where.not(id: following_ids).where.not(id: current_user.id).joins(:lists).group('users.id').having('count(user_id) > 1')
   end
 
-  def default_avatar
-    if User.photo? == false
-      user.photo = image_tag("http://res.cloudinary.com/dgccrihdr/image/upload/v1534339332/default-avatar.png")
-    end
-  end
-
 
   private
   def set_user
