@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_save :default_avatar
   before_action :set_user
   def follow
     current_user.follow(@user)
