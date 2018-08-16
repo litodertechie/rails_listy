@@ -27,9 +27,13 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'social-share-button'
 gem 'friendly_id', '~> 5.2.0'
 gem 'impressionist'
+gem 'postmark-rails'
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "letter_opener"
 end
+
+
 
 group :development, :test do
   gem 'dotenv-rails'
