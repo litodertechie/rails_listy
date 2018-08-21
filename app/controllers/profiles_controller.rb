@@ -26,11 +26,10 @@ class ProfilesController < ApplicationController
 
   def show
     impressionist(@user)
+    @followers = @user.followers
+    @following = @user.all_following
   end
 
-  def profile
-    @my_lists = current_user.lists
-  end
 
   private
   def set_user
