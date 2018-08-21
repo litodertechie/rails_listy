@@ -28,6 +28,7 @@ gem 'social-share-button'
 gem 'friendly_id', '~> 5.2.0'
 gem 'impressionist'
 gem 'postmark-rails'
+gem 'postmark_mailer', github: 'scienceexchange/postmark_mailer'
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"

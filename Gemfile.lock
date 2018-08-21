@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/scienceexchange/postmark_mailer.git
+  revision: 152b64d07df26c85a69da9bef3fd8c8390f9762b
+  specs:
+    postmark_mailer (0.1.2)
+      activejob (>= 4.2)
+      postmark
+
+GIT
   remote: git://github.com/tcocca/acts_as_follower.git
   revision: c5ac7b9601c4af01eb4d9112330b27be4d694ecc
   branch: master
@@ -342,6 +350,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   pg (~> 0.21)
   postmark-rails
+  postmark_mailer!
   pry-byebug
   pry-rails
   public_activity
