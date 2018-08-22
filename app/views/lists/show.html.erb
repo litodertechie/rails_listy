@@ -49,7 +49,7 @@
             <i class="fa fa-heart"></i>
             <% end %>
             <span class="likes-count"><%= @list.get_upvotes.size %></span>
-            <%= social_share_button_tag(@list.name) %>
+            <%= social_share_button_tag(@list.name, :url => list_path(@list)) %>
           </div>
         </div>
       </div>
