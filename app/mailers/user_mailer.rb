@@ -5,7 +5,7 @@ class UserMailer < PostmarkMailer::Base
     mail(
       to: @user.email,
       from:'support@listy.club',
-      template_id: 8043061,
+      template_id: 8043063,
       template_model: {
         username: @user.username,
         company_name: "Listy",
