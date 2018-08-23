@@ -19,14 +19,14 @@
             <h3><%= @user.lists.count %></h3>
             <p>Lists</p>
           </a>
-          <%= link_to "", :class => "tab", "data-toggle" => "modal", "data-target" => "#exampleModalLong" do%>
+          <%= link_to "", :class => "tab", "data-toggle" => "modal", "data-target" => "#followerModalLong" do%>
             <h3><%= current_user.followers_count %></h3>
             <p>Followers</p>
             <% end %>
-          <a class="tab" href="#">
+          <%= link_to "", :class => "tab", "data-toggle" => "modal", "data-target" => "#followingModalLong" do %>
             <h3><%= @user.follow_count %></h3>
             <p>Following</p>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>
@@ -41,17 +41,16 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="followerModalLong" tabindex="-1" role="dialog" aria-labelledby="followerModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Followers</h5>
+        <h5 class="modal-title" id="followerModalLongTitle">Followers</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
         <ul class="user-lists">
             <% @followers.each do |follower| %>
                   <%= link_to profile_path(follower) do %>
@@ -76,6 +75,54 @@
                         </div>
                         <div class="user-stat">
                           <p><%= follower.follow_count %></p>
+                          <p class="user-text">Following</p>
+                        </div>
+                      </div>
+                    </li>
+                <% end %>
+              <% end %>
+          </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="followingModalLong" tabindex="-1" role="dialog" aria-labelledby="followingModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="followingModalLongTitle">Followers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="user-lists">
+            <% @following.each do |following| %>
+                  <%= link_to profile_path(following) do %>
+                    <li class="user">
+                      <div class="user-upper-part">
+                        <%= cl_image_tag following.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-large"%>
+                        <div class="user-name">
+                          <h3><%= "@" + following.username %><h3>
+                          <p><%= [following.first_name, following.last_name].join(" ")%></p>
+                          <% @user = following  %>
+                        </div>
+                      </div>
+                        <%= render '/profiles/follow_form' %>
+                      <div class="user-footer">
+                        <div class="user-stat">
+                          <p><%= following.lists.count %></p>
+                          <p class="user-text">Lists</p>
+                        </div>
+                        <div class="user-stat">
+                          <p><%= following.followers_count %></p>
+                          <p class="user-text">Followers</p>
+                        </div>
+                        <div class="user-stat">
+                          <p><%= following.follow_count %></p>
                           <p class="user-text">Following</p>
                         </div>
                       </div>

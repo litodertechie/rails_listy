@@ -9,7 +9,7 @@
           <h2><%= current_user.description%></h2>
         </div>
         <div class="small-tabs">
-          <a class="small-tab active" href="#">
+          <a class="tab small active" href="#">
             <% total = 0 %>
             <% @current_user.lists.each do |list| %>
               <% total += list.get_upvotes.size %>
@@ -17,15 +17,15 @@
             <h3><%=total%></h3>
             <p>Likes</p>
           </a>
-          <a class="small-tab" href="#">
+          <a class="tab small" href="#">
             <h3><%= current_user.lists.count %></h3>
             <p>Lists</p>
           </a>
-          <a class="small-tab" href="#">
+          <a class="tab small" href="#">
             <h3><%= current_user.followers_count %></h3>
             <p>Followers</p>
           </a>
-          <a class="small-tab" href="#">
+          <a class="tab small" href="#">
             <h3><%= current_user.follow_count %></h3>
             <p>Following</p>
           </a>
