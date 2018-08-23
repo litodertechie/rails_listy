@@ -18,6 +18,14 @@
   text-decoration: none;
   opacity: 0.8;
 }
+
+:focus {
+  text-decoration: none;
+  outline: -webkit-focus-ring-color auto 0px;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: none;
+  outline-width: none;
+}
 .tabs h3 {
   font-size: 17px;
   font-weight: bold;
