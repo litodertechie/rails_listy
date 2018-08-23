@@ -30,9 +30,18 @@
                 <h5 class="normal-card-title"><%= item.name %></h5>
                 <p class="item-description"><%= item.description %></p>
               </div>
-              <div class="normal-card-bottom-border"></div>
+              <div class="normal-card-bottom-border">
+              </div>
           <% end %>
         <% end %>
+        <div class="like">
+          <%= link_to like_list_path(@list), method: :put, remote: :true do %>
+          <i class="fa fa-heart"></i>
+          <% end %>
+          <%= link_to "", :class => "like-count", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
+          <%= @number_likes %>
+          <% end %>
+        </div>
         <div class="item-footer">
           <% if @list.user == current_user %>
             <div class="item-footer-left">
@@ -45,13 +54,7 @@
             </div>
           <% end %>
           <div class="item-footer-right">
-            <%= link_to like_list_path(@list), method: :put, remote: :true do %>
-            <i class="fa fa-heart"></i>
-            <% end %>
-            <%= link_to "", :class => "like-count", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
-            <%= @number_likes %>
-            <% end %>
-            <%= social_share_button_tag(@list.name, :url => list_path(@list)) %>
+          <%= social_share_button_tag(@list.name, :url => list_path(@list)) %>
           </div>
         </div>
       </div>
