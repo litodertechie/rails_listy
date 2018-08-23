@@ -1,8 +1,10 @@
 class ListsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :vote]
   respond_to :js, :json, :html
   def show
+    @number_likes = @list.get_upvotes.size
+    @people_who_liked = @list.votes_for.up.by_type(User).voters
   end
 
   def index
@@ -52,7 +54,7 @@ class ListsController < ApplicationController
 
   private
 
-  def set_todo_list
+  def set_list
     @list = List.find(params[:id])
   end
 

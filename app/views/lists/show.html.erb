@@ -48,12 +48,62 @@
             <%= link_to like_list_path(@list), method: :put, remote: :true do %>
             <i class="fa fa-heart"></i>
             <% end %>
-            <span class="likes-count"><%= @list.get_upvotes.size %></span>
+            <%= link_to "", :class => "like-count", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
+            <%= @number_likes %>
+            <% end %>
             <%= social_share_button_tag(@list.name, :url => list_path(@list)) %>
           </div>
         </div>
       </div>
+      <div class="modal fade" id="likeModalLong" tabindex="-1" role="dialog" aria-labelledby="likeModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="likeModalLongTitle">People who Liked</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+          <div class="modal-body">
+            <ul class="user-lists">
+              <% @people_who_liked.each do |liker| %>
+                <%= link_to profile_path(liker) do %>
+                    <li class="user">
+                      <div class="user-upper-part">
+                        <%= cl_image_tag liker.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-large"%>
+                        <div class="user-name">
+                          <h3><%= "@" + liker.username %><h3>
+                          <p><%= [liker.first_name, liker.last_name].join(" ")%></p>
+                          <% @user = liker  %>
+                        </div>
+                      </div>
+                      <%= render '/profiles/follow_form' %>
+                      <div class="user-footer">
+                      <div class="user-stat">
+                        <p><%= liker.lists.count %></p>
+                        <p class="user-text">Lists</p>
+                      </div>
+                      <div class="user-stat">
+                        <p><%= liker.followers_count %></p>
+                        <p class="user-text">Followers</p>
+                      </div>
+                      <div class="user-stat">
+                        <p><%= liker.follow_count %></p>
+                        <p class="user-text">Following</p>
+                      </div>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
+             </ul>
+          </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
   </div>
 </div>
 

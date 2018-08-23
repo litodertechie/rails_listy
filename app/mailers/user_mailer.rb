@@ -7,6 +7,7 @@ class UserMailer < PostmarkMailer::Base
       from:'support@listy.club',
       template_id: 8043063,
       template_model: {
+        name: @user.first_name,
         username: @user.username,
         company_name: "Listy",
         product_name: "Listy",
