@@ -106,12 +106,16 @@
     }
 
     a .fa-heart {
-      color: #E6E6E6 !important;
+      color: #E6E6E6 ;
     }
 
     .likes-count {
       font-size: 16px;
       color: #dce0e0;
+    }
+
+    .fa-heart.liked {
+      color: #D3473C !important;
     }
 
     @media screen and (max-width: 600px) {

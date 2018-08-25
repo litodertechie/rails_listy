@@ -35,11 +35,11 @@
           <% end %>
         <% end %>
         <div class="like">
-          <%= link_to like_list_path(@list), method: :put, remote: :true do %>
-          <i class="fa fa-heart"></i>
+          <%= link_to like_list_path(@list), :class => "like-btn", method: :put, remote: :true do %>
+            <i class="fa fa-heart"></i>
           <% end %>
-          <%= link_to "", :class => "like-count", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
-          <%= @number_likes %>
+          <%= link_to "", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
+            <span class="likes-count"><%= @list.get_upvotes.size %></span>
           <% end %>
         </div>
         <div class="item-footer">

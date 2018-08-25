@@ -1,6 +1,6 @@
 <% if current_user.liked? @list %>
-  $('.like-btn').addClass('liked');
+  $('.fa-heart').addClass('liked');
   <% else %>
-  $('.like-btn').removeClass('liked');
+  $('.fa-heart').removeClass('liked');
 <% end %>
-$('.likes-count').html("<%=@list.get_upvotes.size%>")
+$('.likes-count').html("<%= @list.get_upvotes.size %>")
