@@ -36,7 +36,7 @@
         <% end %>
         <div class="like">
           <%= link_to like_list_path(@list), :class => "like-btn", method: :put, remote: :true do %>
-            <i class="fa fa-heart"></i>
+            <%= liked_list(@list) %>
           <% end %>
           <%= link_to "", "data-toggle" => "modal", "data-target" => "#likeModalLong" do %>
             <span class="likes-count"><%= @list.get_upvotes.size %></span>
