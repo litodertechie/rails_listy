@@ -15,6 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     resource.save
       if @user.photo.file.nil?
+        raise
         @user.remote_photo_url = "http://res.cloudinary.com/dgccrihdr/image/upload/v1534339332/default-avatar.png"
       end
     yield resource if block_given?
