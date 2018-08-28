@@ -1,43 +1,5 @@
 <div class="row">
-  <aside class="col-md-3 col-4 left-column">
-    <section>
-    <div class="small-profile-header-wrapper">
-      <div class="container small-profile-header-container user-text-center">
-        <div class="small-profile-header-infos">
-          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-bordered"%>
-          <h1><%= current_user.username %></h1>
-          <h2><%= current_user.description%></h2>
-        </div>
-        <div class="small-tabs">
-          <a class="tab small active" href="#">
-            <% total = 0 %>
-            <% @current_user.lists.each do |list| %>
-              <% total += list.get_upvotes.size %>
-            <%end %>
-            <h3><%=total%></h3>
-            <p>Likes</p>
-          </a>
-          <a class="tab small" href="#">
-            <h3><%= current_user.lists.count %></h3>
-            <p>Lists</p>
-          </a>
-          <a class="tab small" href="#">
-            <h3><%= current_user.followers_count %></h3>
-            <p>Followers</p>
-          </a>
-          <a class="tab small" href="#">
-            <h3><%= current_user.follow_count %></h3>
-            <p>Following</p>
-          </a>
-        </div>
-      </div>
-      <div class="profile-views">
-        <h2><%= current_user.impressionist_count %></h2>
-        <h3>Profile Views</h3>
-      </div>
-    </div>
-    </section>
-  </aside>
+  <%= render "profiles/profile_container" %>
   <div class="col-md-6 col-12 feed">
     <div class="call-to-action">
       <h3>What are you waiting for? Create a list and inspire other's</h3>

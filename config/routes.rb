@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :index] do
     collection do
       get :autocomplete
+      get :settings
     end
   end
   resources :lists do
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
       get :follow
       get :unfollow
       get :follow_suggestions
+      put "settings" => "users#settings"
     end
   end
   resources :activities

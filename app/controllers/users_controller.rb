@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     @users = User.where.not(id: following_ids).where.not(id: current_user.id).joins(:lists).group('users.id').having('count(user_id) > 1')
   end
 
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      redirect_to profile_path(@user)
+    else
+    render 'devise/registrations/edit'
+    end
+  end
+
 
   private
   def set_user
@@ -24,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :photo, :photo_cache)
+    params.require(:user).permit(:first_name, :last_name, :username, :photo, :photo_cache, :description)
   end
 end
 

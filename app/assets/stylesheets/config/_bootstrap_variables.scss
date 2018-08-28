@@ -34,6 +34,10 @@ $brand-warning:   $orange;
   border-color: $red;
 }
 
+.form-control.is-valid{
+  border-color: $light-gray !important;
+}
+
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-tooltip,
 .form-control.is-invalid ~ .invalid-feedback,
@@ -45,4 +49,8 @@ $brand-warning:   $orange;
   display: block;
 }
 
+.btn.btn-primary {
+  background-color: #4285F4 !important;
+  border-color: #4285F4 !important;
+}
 // Override other variables below!

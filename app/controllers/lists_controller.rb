@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     @list.user = current_user
     if @list.save
       @list.create_activity :create, owner: current_user
-      redirect_to profile_path(current_user), notice: 'List was successfully created'
+      redirect_to list_path(@list), notice: 'List was successfully created'
     else
       render :new
     end

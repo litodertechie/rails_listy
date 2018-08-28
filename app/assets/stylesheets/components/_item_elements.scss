@@ -32,6 +32,7 @@
     .url-card-url-root {
       bottom: 0;
       margin-bottom: 0px;
+      position: absolute;
     }
 
     .url-card-body h5 {
@@ -62,7 +63,7 @@
 
     .url-link:hover {
       color: #616668;
-      opacity: 0.8;
+      opacity: 0.9;
       text-decoration: none;
     }
 

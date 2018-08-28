@@ -1,27 +1,51 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+<div class="row">
+  <%= render "profiles/profile_container" %>
+  <div class="col-md-6 col-12 feed feed-settings">
+    <div class="profile-settings">
+      <div class="header-wrapper first">
+        <h3>Profile</h3>
+      </div>
+      <hr>
+      <div class="form-wrapper">
+        <%= simple_form_for(@user, url: user_path(@user), html: { method: :put }) do |f| %>
+        <%= f.input :description, label: "Bio", required: false %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="form-actions">
+          <%= f.button :submit, "Save Changes", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
     <% end %>
+    <hr>
+    <div class="profile-settings">
+      <div class="header-wrapper second">
+        <h3>Account</h3>
+      </div>
+      <div class="form-wrapper">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %>
+
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+              <%= f.input :password_confirmation, required: false %>
+              <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+            </div>
+            <div class="form-actions">
+            <%= f.button :submit, "Save Changes", class: "btn btn-primary" %>
+            </div>
+        <% end %>
+      </div>
+      </div>
+      <hr>
+      <div class="form-wrapper">
+        <p>Unhappy? <%= link_to "Deactivate your account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        </p>
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
