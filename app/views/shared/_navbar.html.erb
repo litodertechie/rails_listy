@@ -23,8 +23,29 @@
   <div class="navbar-listy-right hidden-xs hidden-sm">
     <% if current_user.is_a?(User) %>
       <!-- Avatar with dropdown menu -->
-      <%= link_to "Home", activities_path, class: "btn-navigation" %>
-      <%= link_to "Create a List", new_list_path, class: "btn-navigation btn-right" %>
+      <!-- <div class="icon">
+        <div class="btn-group dropleft" data-behavior="notifications">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" data-behavior="notifications-link">
+              <i class="far fa-bell icon-selector"></i><span data-behavior="unread-count"></span>
+            </a>
+            <div class="dropdown-menu" data-behavior="notification-items">
+              <a href="#" class="dropdown-item">Action</a>
+
+            </div>
+          </div>
+      </div> -->
+      <div class="icon">
+        <%= link_to activities_path do %>
+          <i class="fas fa-home icon-selector"></i>
+          <p>Home</p>
+        <% end %>
+      </div>
+      <div class="icon">
+        <%= link_to new_list_path do %>
+          <i class="fas fa-edit icon-selector"></i>
+          <p>New List</p>
+        <% end %>
+      </div>
       <div class="navbar-listy-item">
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
