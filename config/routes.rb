@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
+  get 'notifications_controller/index'
   get 'activities/index'
   get 'users/follow'
   get 'users/unfollow'
@@ -26,5 +28,10 @@ Rails.application.routes.draw do
     end
   end
   resources :activities
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

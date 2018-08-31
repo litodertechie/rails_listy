@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def follow
     current_user.follow(@user)
+    #create follow notification for the user
     redirect_to profile_path(@user)
   end
 

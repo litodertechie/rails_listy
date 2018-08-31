@@ -13,6 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lists, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
   after_create :send_welcome_email
 
   def search_data

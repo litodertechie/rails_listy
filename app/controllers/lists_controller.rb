@@ -46,6 +46,8 @@ class ListsController < ApplicationController
   def vote
     if !current_user.liked? @list
       @list.liked_by current_user
+      #create like notification for the user
+      Notification.create(recipient: @list.user, actor: current_user, action: "liked", notifiable: @list)
     elsif current_user.liked? @list
       @list.unliked_by current_user
     end
