@@ -1,5 +1,5 @@
-$(document).ready(function() {
- $(".fa-camera").click(function () {
-  $(".photo-input").toggle();
-  });
-});
+$(document).on('click', '.fa-camera', function() {
+ $(".photo-input").toggle();
+  return false; });
+
+

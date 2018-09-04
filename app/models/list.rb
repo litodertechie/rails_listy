@@ -6,4 +6,3 @@ class List < ApplicationRecord
   accepts_nested_attributes_for :items, allow_destroy: true
 end
 
-# , reject_if: proc { |att| att['description'].blank?}

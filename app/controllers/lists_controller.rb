@@ -3,7 +3,6 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy, :vote]
   respond_to :js, :json, :html
   def show
-    @number_likes = @list.get_upvotes.size
     @people_who_liked = @list.votes_for.up.by_type(User).voters
   end
 
