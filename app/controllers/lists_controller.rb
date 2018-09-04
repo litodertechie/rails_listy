@@ -31,7 +31,7 @@ class ListsController < ApplicationController
   def update
     if @list.update(list_params)
       @list.create_activity :update, owner: current_user
-      redirect_to profile_path(current_user), notice: 'List was successfully updated.'
+      redirect_to list_path(@list), notice: 'List was successfully created'
     else
       render :edit
     end
