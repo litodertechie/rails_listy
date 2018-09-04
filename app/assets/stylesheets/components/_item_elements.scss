@@ -1,4 +1,17 @@
 // in here is the CSS for the show.html.erb of each list. This is how a user views the list of another user
+    a.fa-trash-alt {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .user-image-container {
+      width: 100%;
+    }
+
+    .user-image {
+      width: 100%;
+    }
+
     .normal-card-body{
       border: 1px solid #dce0e0;
       margin-bottom: 20px;

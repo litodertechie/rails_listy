@@ -1,6 +1,7 @@
 require 'uri'
 class Item < ApplicationRecord
   belongs_to :list, optional: true
+  mount_uploader :photo, PhotoUploader
 
   def preview
     if url.present? ?

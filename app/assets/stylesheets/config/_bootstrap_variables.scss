@@ -49,8 +49,9 @@ $brand-warning:   $orange;
   display: block;
 }
 
-.btn.btn-primary {
-  background-color: #4285F4 !important;
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+   background-color: #4285F4 !important;
   border-color: #4285F4 !important;
 }
 // Override other variables below!

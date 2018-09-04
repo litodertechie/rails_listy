@@ -152,11 +152,12 @@
 .icon-selector{
   font-size: 18px;
   color: #E6E6E6 !important;
-  margin: 5px;
+  margin: auto;
 }
 
 .icon {
   padding: 10px;
+  text-align: center;
 }
 
 .icon p {
@@ -164,6 +165,28 @@
   margin-bottom: 0px;
   color: #3894BA;
 }
+
+a:hover .icon-selector {
+  font-size: 22px;
+  transition: all 0.15s ease;
+}
+
+
+.icon.active {
+  opacity: 1;
+  border-bottom: 5px solid #3894BA;
+}
+
+.btn-info {
+  margin-right: 5px;
+}
+
+.far.fa-bell {
+  margin-left: 0px !important;
+}
+
+
+
 
 
 
