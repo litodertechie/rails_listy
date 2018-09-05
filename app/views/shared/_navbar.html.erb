@@ -7,20 +7,21 @@
     <h1 class="logo-listy">Listy</h1>
   </div>
 
-  <div class="navbar-search">
-    <%= form_tag(profiles_path, method: :get, class: "form-inline", role: 'search') do %>
-    <div class="input-group-search">
-      <%= text_field_tag :term,
-        params[:term],
-        id: 'users_search',
-        autocomplete: :off,
-        placeholder: 'Search',
-        class: 'form-control' %>
-    </div>
-    <% end %>
-  </div>
   <!-- Right Navigation -->
   <div class="navbar-listy-right hidden-xs hidden-sm">
+    <div class="navbar-search">
+      <i class="fas fa-search"></i>
+      <%= form_tag(profiles_path, method: :get, class: "form-inline", role: 'search') do %>
+        <div class="input-group-search">
+          <%= text_field_tag :term,
+            params[:term],
+            id: 'users_search',
+            autocomplete: :off,
+            placeholder: 'User?',
+            class: 'form-control' %>
+        </div>
+      <% end %>
+    </div>
     <% if current_user.is_a?(User) %>
       <div class="icon">
         <div class="btn-group dropleft" data-behavior="notifications">
@@ -29,7 +30,7 @@
               <p>Notifications</p>
           </a>
           <div class="dropdown-menu" data-behavior="notification-items">
-              <a href="#" class="dropdown-item">Action</a>
+              <a href="#" class="dropdown-item">Chris liked your list</a>
           </div>
         </div>
       </div>

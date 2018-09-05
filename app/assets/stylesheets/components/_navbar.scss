@@ -70,13 +70,10 @@
 }
 
 .navbar-search {
-  // margin-left: 60px;
+  display: flex;
 
 }
 
-.input-group-search {
-
-}
 
 /* Logo */
 .navbar-listy-brand img {
@@ -179,10 +176,26 @@ a:hover .icon-selector {
 
 .btn-info {
   margin-right: 5px;
+  margin-left: 10px;
 }
 
 .far.fa-bell {
   margin-left: 0px !important;
+}
+
+.fa-search {
+  font-size: 25px;
+  padding: 7px;
+}
+
+.form-control {
+  border-radius: 1.25rem;
+  background-color: #f5f8fa;
+  font-weight: lighter;
+}
+
+.btn {
+  margin-bottom: 0px !important;
 }
 
 

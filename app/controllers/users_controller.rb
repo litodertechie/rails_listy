@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user
 
+  def show
+    redirect_to profile_path(@user)
+  end
 
   def follow
     current_user.follow(@user)
