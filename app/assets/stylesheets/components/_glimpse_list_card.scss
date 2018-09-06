@@ -27,11 +27,13 @@
 }
 
 .glimpse-user-image-container {
-  width: 40%;
+  width: 50%;
 }
 
 .glimpse-card-text {
   display: block;
+  width: 50%;
+  margin-left: 10px;
 }
 
 .glimpse-url-card-body {
@@ -44,9 +46,6 @@
 
 }
 
-.glimpse-card-text{
-  margin-left: 10px;
-}
 
 .glimpse-url-card-title {
   font-size: 1rem;
