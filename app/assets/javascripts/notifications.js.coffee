@@ -13,7 +13,7 @@ class Notifications
 
   handleSuccess: (data) =>
     console.log(data)
-    items = $.map data, (notification) ->
+    items = $.map.data (notification) ->
     "<a class='dropdown-item' href=''>#{notification.actor}</a>"
 
 jQuery ->

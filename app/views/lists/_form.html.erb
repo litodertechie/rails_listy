@@ -1,5 +1,5 @@
 <div class="form-list">
-  <%= simple_form_for (@list) do |f|  %>
+  <%= simple_form_for (@list), html: { autocomplete: 'off' } do |f|  %>
     <%= f.error_notification  %>
     <div class= 'form-inputs'>
     <h3>  <%= f.input :name, :placeholder => 'Give your list a name'  %></h3>
