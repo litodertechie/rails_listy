@@ -1,0 +1,12 @@
+<div class="counter"> <%= counter %> </div>
+  <div class="normal-card-body">
+    <h5 class="normal-card-title"><%= item.name %></h5>
+    <% if item.photo.url != nil %>
+      <div class="user-image-container">
+      <%= image_tag((item.photo.url), class: "user-image") %>
+      </div>
+    <% end %>
+    <p class="item-description"><%= item.description %></p>
+  </div>
+  <div class="normal-card-bottom-border"> </div>
+

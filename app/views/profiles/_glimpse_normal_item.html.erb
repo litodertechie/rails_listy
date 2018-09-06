@@ -1,0 +1,12 @@
+<div class="counter">1</div>
+  <div class="glimpse-normal-card-body">
+    <% if item.photo.url != nil %>
+      <div class="glimpse-user-image-container">
+      <%= image_tag((item.photo.url), class: "user-image") %>
+      </div>
+    <% end %>
+    <div class="glimpse-card-text">
+      <h5 class="normal-card-title"><%= item.name %></h5>
+      <p class="item-description"><%= item.description %></p>
+    </div>
+  </div>

@@ -9,9 +9,9 @@
 }
 
 .controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 .controls-right {
@@ -20,5 +20,48 @@
 
 .fa-heart {
   color: #657786 !important ;
+}
+
+.glimpse-normal-card-body{
+  display: flex;
+}
+
+.glimpse-user-image-container {
+  width: 40%;
+}
+
+.glimpse-card-text {
+  display: block;
+}
+
+.glimpse-url-card-body {
+  border: 1px solid #dce0e0;
+  display: flex;
+}
+
+.glimpse-url-card-description {
+  margin-bottom: 0px;
+
+}
+
+.glimpse-card-text{
+  margin-left: 10px;
+}
+
+.glimpse-url-card-title {
+  font-size: 1rem;
+  margin-bottom: 0px !important;
+}
+
+.glimpse-url-card-description {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.glimpse-url-card-url-root{
+  font-size: 12px;
+  bottom: 0;
+  margin-bottom: 0px;
+  position: absolute;
 }
 

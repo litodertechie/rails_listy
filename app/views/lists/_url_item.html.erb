@@ -1,0 +1,15 @@
+<% output = item.preview %>
+<%= link_to output[3], class: "url-link", target: :_blank do   %>
+  <div class="counter"> <%= counter %> </div>
+    <div class="url-card-body">
+      <div class ="url-card-image-container">
+        <%= image_tag((output[0]), class: "url-image") %>
+      </div>
+      <div class="url-card-text">
+        <h5 class="url-card-title"><%= output[2] %></h5>
+        <p class="url-card-description"> <%= output[1] %></p>
+        <p class="url-card-url-root"> <%= output[4] %> </p>
+      </div>
+    </div>
+  <p class= "item-description"><%= item.description %></p>
+<% end %>
