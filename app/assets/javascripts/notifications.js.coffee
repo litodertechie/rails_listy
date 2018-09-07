@@ -14,7 +14,7 @@ class Notifications
   handleSuccess: (data) =>
     console.log(data)
     items = $.map data, (notification) ->
-     "<a class='dropdown-item' href='#{notification.url}>#{notification.action} #{notification.notifiable.type}</a>"
+      "<a class='dropdown-item' href='#{notification.url}'>#{notification.action} #{notification.notifiable.type}</a>"
 
 jQuery ->
   new Notifications
