@@ -47,6 +47,7 @@ class ListsController < ApplicationController
       @list.liked_by current_user
       #create like notification for the user
       Notification.create(recipient: @list.user, actor: current_user, action: "liked", notifiable: @list)
+      $tracker.track( user_id , "Liked a List")
     elsif current_user.liked? @list
       @list.unliked_by current_user
     end

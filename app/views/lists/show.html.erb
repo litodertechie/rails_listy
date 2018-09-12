@@ -50,33 +50,7 @@
           <div class="modal-body">
             <ul class="user-lists">
               <% @people_who_liked.each do |liker| %>
-                <%= link_to profile_path(liker) do %>
-                    <li class="user">
-                      <div class="user-upper-part">
-                        <%= cl_image_tag liker.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar-large"%>
-                        <div class="user-name">
-                          <h3><%= "@" + liker.username %><h3>
-                          <p><%= [liker.first_name, liker.last_name].join(" ")%></p>
-                          <% @user = liker  %>
-                        </div>
-                      </div>
-                      <%= render '/profiles/follow_form' %>
-                      <div class="user-footer">
-                      <div class="user-stat">
-                        <p><%= liker.lists.count %></p>
-                        <p class="user-text">Lists</p>
-                      </div>
-                      <div class="user-stat">
-                        <p><%= liker.followers_count %></p>
-                        <p class="user-text">Followers</p>
-                      </div>
-                      <div class="user-stat">
-                        <p><%= liker.follow_count %></p>
-                        <p class="user-text">Following</p>
-                      </div>
-                      </div>
-                    </li>
-                  <% end %>
+                <%= render 'profiles/user_card', user: liker %>
                 <% end %>
              </ul>
           </div>

@@ -1,22 +1,14 @@
-/* Main navbar */
-.logo {
-  color: #3894BA;
-}
-.logo-listy{
-  font-size: 40px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-top: 15px;
-  color: #3894BA;
-
-}
-
 
 // hide sign up button and h1 listy tag on mobile
 @media screen and (max-width: 600px) {
   h1.logo-listy {
     display: none;
   }
+
+  .logo-listy {
+    font-size: 30px;
+  }
+
   .btn-info {
     display: none;
   }
@@ -42,12 +34,32 @@
   .btn-navigation {
     display: none;
   }
+
+  .icon-hidden-mobile {
+    display: none;
+  }
+
+  .navbar-left{
+    font-size: 30px;
+  }
+
+  .icon p {
+    display: none;
+  }
 }
 .navbar-left{
   font-size: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #3894BA;
+}
+
+.logo-listy{
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
+
 }
 
 .vl{
@@ -71,7 +83,6 @@
 
 .navbar-search {
   display: flex;
-
 }
 
 
@@ -181,6 +192,25 @@ a:hover .icon-selector {
 
 .far.fa-bell {
   margin-left: 0px !important;
+  position: relative;
+}
+
+.num {
+  position: absolute;
+  top: -4px;
+  right: 20px;
+  color: white;
+  background-color: #D3473C;
+  border-radius: 50% !important;
+  font-size: 12px;
+  width: 12px;
+  height: 14px;
+  line-height: 1.1;
+}
+
+// hides when there are no notifications
+.num:empty {
+  display: none !important;
 }
 
 .fa-search {
@@ -196,6 +226,27 @@ a:hover .icon-selector {
 
 .btn-user {
   margin-bottom: 0px !important;
+}
+
+.navbar-listy-notifications-dropdown {
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+  top: 50px !important;
+  left: 50px !important;
+}
+
+.navbar-listy-notifications-dropdown:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
 }
 
 

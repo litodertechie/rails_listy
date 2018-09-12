@@ -1,13 +1,13 @@
-<div class="navbar-listy">
+<nav class="sticky-top navbar-listy">
   <div class="navbar-left">
-    <%= link_to activities_path, class: "navbar-listy-brand" do %>
-    <i class="fas fa-th-list logo"></i>
-    <% end %>
-    <div class="vl"></div>
-    <h1 class="logo-listy">Listy</h1>
+      <%= link_to activities_path, class: "navbar-listy-brand" do %>
+      <i class="fas fa-th-list logo"></i>
+      <% end %>
+      <div class="vl"></div>
+      <h1 class="logo-listy">Listy</h1>
   </div>
 
-  <!-- Right Navigation -->
+    <!-- Right Navigation -->
   <div class="navbar-listy-right hidden-xs hidden-sm">
     <div class="navbar-search">
       <i class="fas fa-search"></i>
@@ -23,28 +23,28 @@
       <% end %>
     </div>
     <% if current_user.is_a?(User) %>
-      <div class="icon">
-        <div class="btn-group dropleft" data-behavior="notifications">
-          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" data-behavior="notifications-link">
-              <i class="far fa-bell icon-selector"></i><span data-behavior="unread-count"></span>
-              <p>Notifications</p>
-          </a>
-          <div class="dropdown-menu" data-behavior="notification-items">
-              <a href="#" class="dropdown-item">Chris liked your list</a>
+    <div class="icon">
+      <div class="btn-group dropleft" data-behavior="notifications">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" data-behavior="notifications-link">
+          <i class="far fa-bell icon-selector"></i><span class="num" data-behavior="unread-count"></span>
+                <p>Notifications</p>
+            </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-listy-notifications-dropdown" data-behavior="notification-items">
+            <!-- thats where the notifcations appear -->
           </div>
-        </div>
       </div>
-      <%= link_to activities_path, :class => "icon" do %>
-        <i class="fas fa-home icon-selector"></i>
-        <p>Home</p>
-      <% end %>
-      <%= link_to new_list_path, :class => "icon" do %>
-        <i class="fas fa-edit icon-selector"></i>
-        <p>New List</p>
-      <% end %>
-      <div class="navbar-listy-item">
-        <div class="dropdown">
-          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+    </div>
+    <%= link_to activities_path, :class => "icon icon-hidden-mobile" do %>
+      <i class="fas fa-home icon-selector"></i>
+      <p>Home</p>
+    <% end %>
+    <%= link_to new_list_path, :class => "icon icon-hidden-mobile" do %>
+      <i class="fas fa-edit icon-selector"></i>
+      <p>New List</p>
+    <% end %>
+    <div class="navbar-listy-item">
+      <div class="dropdown">
+        <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-listy-dropdown-menu">
             <li>
               <%= link_to profile_path(current_user) do %>
@@ -61,14 +61,15 @@
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "btn btn-info btn-user" %>
-      <%= link_to t(".sign_in", default: "Log In"), new_user_session_path, class: "btn btn-primary btn-user" %>
-    <% end %>
-  </div>
-</div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "btn btn-info btn-user" %>
+        <%= link_to t(".sign_in", default: "Log In"), new_user_session_path, class: "btn btn-primary btn-user" %>
+      <% end %>
+    </div>
+</nav>
+
 

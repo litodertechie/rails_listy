@@ -13,10 +13,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lists, dependent: :destroy
-  has_many :notifications, foreign_key: :recipient_id
+  has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
+  has_many :sent_notifications, class_name: "Notification", foreign_key: :actor_id, dependent: :destroy
   after_create :send_welcome_email
+  after_create :identify_user
+  after_update :track_user_update
   validates_uniqueness_of :username
-
   def search_data
     {
       username: username,
@@ -29,6 +31,24 @@ class User < ApplicationRecord
     new_record?
   end
 
+  def notification_to_s
+    "started following you"
+  end
+
+  def identify_user
+    $tracker.people.set(
+      id, {    # we already have user object, setting its ID using the object
+    '$first_name'       => first_name,
+    '$last_name'        => last_name,
+    '$email'            => email,
+    '$username'         => username
+    })
+    $tracker.track( id , "Created Account")
+  end
+
+  def track_user_update
+    $tracker.track( id , "Updated Profile")
+  end
 
   private
 

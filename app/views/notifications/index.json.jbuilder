@@ -2,7 +2,8 @@ json.array! @notifications do |notification|
   json.actor notification.actor.username
   json.action notification.action
   json.notifiable do
-    json.type "your list"
+    json.type notification.notifiable.notification_to_s
   end
-  json.url list_path(notification.notifiable, anchor: dom_id(notification.notifiable))
+  json.url polymorphic_path(notification.notifiable)
 end
+
