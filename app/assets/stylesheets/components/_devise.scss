@@ -2,13 +2,39 @@
   background: white;
   padding: 10px 20px;
   margin-top: 20px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    font-weight: bold;
-  }
+  border-radius: 10px;
+  box-shadow: 5px 3px 36px rgba(0, 0, 0, 0.4);
+}
+
+.fb-login-button-custom{
+  // padding: 10px;
+  background-color: #3b5998;
+  width: 100%;
+  color: white;
+  border-radius: 6px;
+  font-size: 24px;
+  margin-bottom: 20px !important;
+}
+
+.welcome-header{
+  margin-bottom: 0px;
+  margin-top: 0px !important;
+}
+
+.or-header {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.slogan-header{
+  font-weight: bold;
+  text-align:center;
+  color: #E6E6E6;
+  margin-bottom: 20px;
+}
+
+.fa-facebook {
+  font-size: 25px;
+  margin-right: 5px;
 }

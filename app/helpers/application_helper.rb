@@ -7,4 +7,6 @@ module ApplicationHelper
     end
     content_tag(:i, '', class: "fa fa-heart #{liked}")
   end
+
+
 end
