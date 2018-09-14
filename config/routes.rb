@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'users/unfollow'
   get 'users_controller/follow'
   get 'users_controller/unfollow'
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users,
+    controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
+  get "/pages/:page" => "pages#show"
   resources :profiles, only: [:show, :index] do
     collection do
       get :autocomplete

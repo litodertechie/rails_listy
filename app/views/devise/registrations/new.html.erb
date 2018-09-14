@@ -2,7 +2,12 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
       <div class="form-login">
-        <h2>Sign up</h2>
+        <h1 class="welcome-header">Welcome to Listy</h1>
+        <h4 class="slogan-header">Find new inspiration</h4>
+        <%= link_to omniauth_authorize_path(:user, :facebook) do  %>
+          <button class="btn fb-login-button-custom"><i class="fab fa-facebook"></i>Continue with Facebook</button>
+        <% end %>
+        <h5 class="or-header">OR</h5>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
@@ -22,6 +27,7 @@
                </script>
             </div>
         <% end %>
+
         <%= render "devise/shared/links" %>
       </div>
     </div>
