@@ -38,6 +38,6 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :photo, :photo_cache, :provider, :uid, :facebook_picture_url, :token, :token_expiry)
+    params.require(:user).permit(:first_name, :last_name, :username, :photo, :photo_cache)
   end
 end
