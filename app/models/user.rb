@@ -32,7 +32,7 @@ class User < ApplicationRecord
     if self.facebook_picture_url?
       self.remote_photo_url = facebook_picture_url
     elsif self.photo.file.nil?
-      self.remote_photo_url = "https://res.cloudinary.com/dgccrihdr/image/upload/v1534339332/default-avatar.png"
+      self.remote_photo_url = "http://res.cloudinary.com/dgccrihdr/image/upload/v1534339332/default-avatar.png"
     else
       self.remote_photo_url
     end
