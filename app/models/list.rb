@@ -3,6 +3,7 @@ class List < ApplicationRecord
   include ::PublicActivity::Common
   belongs_to :user
   has_many :items, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   accepts_nested_attributes_for :items, allow_destroy: true
   after_create :track_list_create
   after_update :track_list_update

@@ -1,0 +1,28 @@
+<% nesting = local_assigns.fetch(:nesting, 1) %>
+<% max_nesting = local_assigns[:max_nesting] %>
+
+<div class="border-left pl-4 mt-4">
+  <div class="comment-body">
+    <%= cl_image_tag comment.user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, secure: true, class: "avatar special" %>
+    <div class="comment-bubble">
+      <%= link_to comment.user.username, profile_path(comment.user), class: "username"%>
+      <%= simple_format comment.body %>
+    </div>
+  </div>
+  <div data-controller="reply">
+    <small>
+      <%= link_to "Reply", "#", data: { action: "click -> reply#toggle"} %>
+      <%= link_to "Delete", [comment.commentable, comment], method: :delete, data: {confirm: "Are you sure?"} if comment.user == current_user %>
+      <%= time_ago_in_words(comment.created_at) %>
+    </small>
+    <%= render partial: "comments/form", locals:
+    { commentable: comment.commentable,
+      parent_id: reply_to_comment_id(comment, nesting, max_nesting),
+      class: "d-none",
+      target: "reply.form"
+    } %>
+  </div>
+  <%= tag.div id: "#{dom_id(comment)}_comments" do %>
+    <%= render comment.comments, nesting: nesting + 1, max_nesting: local_assigns[:max_nesting] %>
+  <%end %>
+</div>
