@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :lists do
+    resources :comments, module: :lists
     member do
       put "like" => "lists#vote"
     end

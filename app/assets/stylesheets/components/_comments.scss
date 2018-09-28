@@ -1,0 +1,33 @@
+.comment-body {
+  display: flex;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(20, 23, 26, 0.125);
+  border-radius: 0.25rem;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.username {
+  font-weight: bold;
+  color: #005792;
+  margin-right: 5px;
+}
+
+.comment-bubble {
+  background-color: #dfe2fe;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.special {
+  margin-right: 5px;
+}
