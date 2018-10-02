@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    if @comment.save
+    if @comment.save!
+      Notification.create(recipient: @commentable.user, actor: current_user, action: "commented", notifiable: @commentable)
       respond_to do |format|
         format.html { redirect_to @commentable }
         format.js
